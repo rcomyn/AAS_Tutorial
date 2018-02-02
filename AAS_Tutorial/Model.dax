@@ -1,0 +1,7 @@
+CREATE MEASURE 'SalesOrderDetail'[Sale Price] =
+    (
+        SUM ( SalesOrderDetail[UnitPrice] )
+            - SUM ( SalesOrderDetail[UnitPriceDiscount] )
+    )
+        * SUM ( SalesOrderDetail[OrderQty] ) ;
+
